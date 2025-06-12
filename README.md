@@ -43,16 +43,17 @@ Công nghệ sử dụng:
 
 ## Cấu trúc thư mục
 
+
+```plaintext
 e-learning/
-│
 ├── backend/
-| ├── app.py # Flask backend
+│   └── app.py             # Flask backend
 ├── public/
-| ├── index.html # Giao diện chính
-├── src/  
-| ├── assets/ # Giao diện chính
-| ├── pages/ # Các trang giao diện khác
-├── .gitignore  
+│   └── index.html         # Giao diện chính
+├── src/
+│   ├── assets/            # Giao diện chính (CSS, JS, images...)
+│   └── pages/             # Các trang giao diện khác
+├── .gitignore
 └── README.md
 
 ## Hướng phát triển
