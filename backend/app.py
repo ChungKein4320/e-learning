@@ -8,14 +8,7 @@ CORS(app)  # Cho phép mọi nguồn truy cập
 
 client = openai.OpenAI(api_key=open("../key.txt").read())
 
-@app.route('/process', methods=['POST'])
-def process():
-    data = request.json
-    message = data.get('message', '')
-    
-    print(f"User: {message}")  # In câu hỏi từ người dùng
-    
-    # Gọi OpenAI để lấy phản hồi
+def call_api(message):
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
@@ -32,7 +25,16 @@ def process():
         max_tokens=1000
     )
 
-    result = completion.choices[0].message.content
+    return completion.choices[0].message.content
+
+@app.route('/process', methods=['POST'])
+def process():
+    data = request.json
+    message = data.get('message', '')
+    
+    print(f"User: {message}")  # In câu hỏi từ người dùng
+    
+    result = call_api(message)
     
     print(f"Bot: {result}")  # In phản hồi từ AI
     
@@ -72,24 +74,7 @@ def process_image():
 
     message = response.choices[0].message.content
     
-    # Gọi OpenAI để lấy phản hồi
-    completion = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {
-                "role": "system", 
-                "content": "You are an AI information support, please give results using MathJax."
-            },
-            
-            {
-                "role": "user",
-                "content": message
-            },
-        ],
-        max_tokens=1000
-    )
-    
-    result = completion.choices[0].message.content
+    result = call_api(message)
     
     print(f"Bot: {result}")  # In phản hồi từ AI
     
