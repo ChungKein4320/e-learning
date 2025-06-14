@@ -60,13 +60,13 @@ e-learning/
 
 Dưới đây là một số tính năng và cải tiến dự kiến trong tương lai:
 
--   [] Thêm tính năng đăng nhập với Google/Facebook.
--   [] Tối ưu hóa giao diện.
--   [] Triển khai lên server thật để hoạt động liên tục (deploy lên Render/Vercel/Heroku...).
--   [] Gợi ý prompt thông minh khi nhập liệu.
--   [] Lưu lịch sử chat theo tài khoản người dùng.
--   [] Chuyển sang dùng cơ sở dữ liệu thực như SQLite/PostgreSQL thay vì LocalStorage.
--   [] Bảo mật dữ liệu người dùng tốt hơn.
+-   Thêm tính năng đăng nhập với Google/Facebook.
+-   Tối ưu hóa giao diện.
+-   Triển khai lên server thật để hoạt động liên tục (deploy lên Render/Vercel/Heroku...).
+-   Gợi ý prompt thông minh khi nhập liệu.
+-   Lưu lịch sử chat theo tài khoản người dùng.
+-   Chuyển sang dùng cơ sở dữ liệu thực như SQLite/PostgreSQL thay vì LocalStorage.
+-   Bảo mật dữ liệu người dùng tốt hơn.
 
 ## Đóng góp
 
